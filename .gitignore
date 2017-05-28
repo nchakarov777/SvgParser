@@ -1,0 +1,10 @@
+//remove craeted codeblocks folders
+
+/bin
+/obj
+
+//remove created codeblocks files
+
+.cbp 
+.layout
+.depend

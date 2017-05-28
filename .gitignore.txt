@@ -1,9 +1,0 @@
-//remove the generated from codeblocks directories
-
-/bin
-/obj
-
-//remove codeblocks project files 
-.cbp
-.depend
-.layout
