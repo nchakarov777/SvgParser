@@ -1,10 +1,10 @@
 //remove craeted codeblocks folders
 
-/bin
-/obj
+/SvgParser/bin
+/SvgParser/obj
 
 //remove created codeblocks files
 
-.cbp 
-.layout
-.depend
+/SvgParser/*.cbp 
+/SvgParser/*.layout
+/SvgParser/*.depend
