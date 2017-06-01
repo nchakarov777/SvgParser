@@ -1,9 +1,10 @@
 #include<iostream>
-#include "Controller.h"
-#include "Shape.h"
+#include<cstring>
+#include "../controllers/Controller.h"
+#include "../shapes/Shape.h"
 using namespace std;
 
-const string OPEN = "open";
+static const string OPEN = "open";
 
 string operation, suboperation;
 Controller controller = Controller();
@@ -28,7 +29,7 @@ int main()
         processOperation(operation);
     }
 
-    Shape shape = Shape("ivan");
+    Shape shape("name");
     cout<<shape.getName();
 
     return 0;
