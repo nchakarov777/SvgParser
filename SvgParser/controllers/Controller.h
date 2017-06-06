@@ -21,6 +21,7 @@ public:
     Controller();
     vector<Shape> openAndReadSvgFile(string fileName);
     Shape craeteShapeObject(string svgObject);
+    void printShapes();
 
 };
 

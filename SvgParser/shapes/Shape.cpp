@@ -30,6 +30,10 @@ void Shape::setStroke(string stroke){
     this->stroke = stroke;
 }
 
+string Shape::getFillColor(){
+    return fillColor;
+}
+
 /**Used dynamic char array only to prove my teacher, that I can properly use them.*/
 void Shape::setName(string name){
     int nameL = name.length()+1;
@@ -39,3 +43,13 @@ void Shape::setName(string name){
         this->name[i] = name[i];
     }
 }
+
+/*void Shape::print(ostream &os){
+    os<<getName()<<" ";
+    cout<<"tuk"<<endl;
+}
+ostream& operator << (ostream& os,  Shape &shape) {
+    shape.print(os);
+    return os;
+}*/
+

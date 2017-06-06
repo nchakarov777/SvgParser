@@ -2,6 +2,7 @@
 #include "../shapes/Rect.h"
 #include<fstream>
 #include<vector>
+#include<iostream>
 
 using namespace std;
 
@@ -28,7 +29,7 @@ vector<Shape> Controller::openAndReadSvgFile(string fileName)
         }
     }
     svg.close();
-
+    cout<<shapes.size()<<endl;
     return shapes;
 }
 
@@ -39,4 +40,8 @@ Shape Controller::craeteShapeObject(string svgObject){
     return Shape("");
 }
 
-
+void Controller::printShapes(){
+    for(int i = 0; i<shapes.size(); i++){
+        cout<<shapes[i].getName()<<" "<<shapes[i].getFillColor()<<endl;
+    }
+}

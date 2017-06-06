@@ -1,5 +1,7 @@
 #include "Shape.h"
 
+#include<iostream>
+
 #ifndef __Rect__
 #define __Rect__
 class Rect: public Shape {
@@ -19,5 +21,8 @@ public:
     void setWidth(int width);
     void setX(int x);
     void setY(int y);
+
+    //virtual void print(ostream& os);
 };
+
 #endif // __Rect__

@@ -1,4 +1,5 @@
 #include<string>
+#include<iostream>
 
 using namespace std;
 
@@ -23,6 +24,12 @@ public :
     void setName(string name);
     void setStroke(string stroke);
     void setFillColor(string fillColor);
+
+   /* virtual void print(ostream &os) = 0;
+
+    friend ostream& operator << (ostream& os, Shape &shape); */
 };
+
+
 
 #endif // __Shape__

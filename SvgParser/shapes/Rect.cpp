@@ -1,14 +1,16 @@
-#include "Rect.h"
-#include "../helpers/StringUtils.h"
-#include "../helpers/ShapeProperties.h"
 #include <sstream>
 #include <iostream>
+
+#include "Rect.h"
 #include "./Shape.h"
+
+#include "../helpers/StringUtils.h"
+#include "../helpers/ShapeProperties.h"
+
 using namespace std;
 
 Rect::Rect(string svgObject):Shape("rect")
 {
-    cout<<svgObject<<endl;
     istringstream objectStream(svgObject);
     string property;
     objectStream>>property;
@@ -16,8 +18,8 @@ Rect::Rect(string svgObject):Shape("rect")
     do
     {
         objectStream>>property;
-        cout<<property<<endl;
-        if(property.find("/>") != string::npos){
+        if(property.find("/>") != string::npos)
+        {
             break;
         }
         setProperty(property);
@@ -27,45 +29,49 @@ Rect::Rect(string svgObject):Shape("rect")
 
 void Rect::setProperty(string property) throw(string)
 {
-    if(property.find(ShapeProperties::HEIGHT))
+    if(property.find(ShapeProperties::HEIGHT)!=string::npos)
     {
+
         string value = StringUtils::getPropertyValue(property);
         setHeight(StringUtils::convertStringToInt(value));
         return;
     }
-    if(property.find(ShapeProperties::WIDTH))
+    if(property.find(ShapeProperties::WIDTH)!=string::npos)
     {
         string value = StringUtils::getPropertyValue(property);
         setWidth(StringUtils::convertStringToInt(value));
         return;
     }
-    if(property.find(ShapeProperties::X))
-    {
-        string value = StringUtils::getPropertyValue(property);
-        setX(StringUtils::convertStringToInt(value));
-        return;
-    }
 
-    if(property.find(ShapeProperties::Y))
-    {
-        string value = StringUtils::getPropertyValue(property);
-        setY(StringUtils::convertStringToInt(value));
-        return;
-    }
-
-    if(property.find(ShapeProperties::STROKE))
+    if(property.find(ShapeProperties::STROKE)!=string::npos)
     {
         string value = StringUtils::getPropertyValue(property);
         setStroke(value);
         return;
     }
 
-    if(property.find(ShapeProperties::FILL))
+    if(property.find(ShapeProperties::FILL)!=string::npos)
     {
         string value = StringUtils::getPropertyValue(property);
         setFillColor(value);
         return;
     }
+
+    if(property.find(ShapeProperties::X)!=string::npos)
+    {
+        string value = StringUtils::getPropertyValue(property);
+        setX(StringUtils::convertStringToInt(value));
+        return;
+    }
+
+    if(property.find(ShapeProperties::Y)!=string::npos)
+    {
+        string value = StringUtils::getPropertyValue(property);
+        setY(StringUtils::convertStringToInt(value));
+        return;
+    }
+
+
 
     throw("Unsupported property");
 }
@@ -114,6 +120,14 @@ int Rect::getHeight()
     return height;
 }
 
-Rect::~Rect(){
+Rect::~Rect()
+{
 
 }
+/*
+void Rect::print(ostream& os)
+{
+    cout<<"TUKAAA"<<endl;
+    os<<getX()<<" "<<getY()<<" "<<getHeight()<<" "<<getWidth()<<" "<<getFillColor()<<endl;
+}
+*/
