@@ -1,12 +1,15 @@
-#include "Controller.h"
-#include "../shapes/Rect.h"
-#include<fstream>
 #include<vector>
+#include<fstream>
 #include<iostream>
+
+#include "Controller.h"
+
+#include "../shapes/Rect.h"
+#include "../shapes/Circle.h"
 
 using namespace std;
 
-static const char* const values[] = {"rect", "cyrcle", "line"};
+static const char* const values[] = {"rect", "circle", "line"};
 
 Controller::Controller()
 {
@@ -38,6 +41,12 @@ Shape* Controller::craeteShapeObject(string svgObject){
         Rect* rect = new Rect(svgObject);
         return rect;
     }
+
+    if(svgObject.find(values[1])!= string::npos){
+        Circle* circle = new Circle(svgObject);
+        return circle;
+    }
+
     return new Rect("");
 }
 

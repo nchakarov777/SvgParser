@@ -1,7 +1,9 @@
-#include<iostream>
 #include<cstring>
-#include "../controllers/Controller.h"
+#include<iostream>
+
 #include "../shapes/Shape.h"
+#include "../controllers/Controller.h"
+
 using namespace std;
 
 //open C:\Users\nikit\Desktop\svg1.svg

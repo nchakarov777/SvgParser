@@ -2,7 +2,7 @@
 #include <iostream>
 
 #include "Rect.h"
-#include "./Shape.h"
+#include "Shape.h"
 
 #include "../helpers/StringUtils.h"
 #include "../helpers/ShapeProperties.h"
@@ -43,7 +43,7 @@ bool Rect::checkValid(string svgObject)
     return getValid();
 }
 
-void Rect::setProperty(string property) throw(string)
+void Rect::setProperty(string property)
 {
     if(property.find(ShapeProperties::HEIGHT)!=string::npos)
     {
@@ -86,10 +86,6 @@ void Rect::setProperty(string property) throw(string)
         setY(StringUtils::convertStringToInt(value));
         return;
     }
-
-
-
-    throw("Unsupported property");
 }
 
 void Rect::setHeight(int height)

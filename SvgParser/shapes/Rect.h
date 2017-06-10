@@ -18,7 +18,7 @@ public:
     int getHeight();
     int getWidth();
 
-    void setProperty(string property) throw(string);
+    void setProperty(string property);
     void setHeight(int height);
     void setWidth(int width);
     void setX(int x);
