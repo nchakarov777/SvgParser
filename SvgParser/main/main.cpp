@@ -4,6 +4,8 @@
 #include "../shapes/Shape.h"
 using namespace std;
 
+//open C:\Users\nikit\Desktop\svg1.svg
+
 static const string OPEN = "open";
 static const string PRINT = "print";
 
@@ -34,10 +36,6 @@ int main()
         cin>>operation;
         processOperation(operation);
     }
-
-    Shape shape("name");
-    cout<<shape.getName();
-
 
     return 0;
 }

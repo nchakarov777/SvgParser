@@ -16,11 +16,11 @@ class Controller
 {
 
 private:
-    vector<Shape> shapes;
+    vector<Shape*> shapes;
 public:
     Controller();
-    vector<Shape> openAndReadSvgFile(string fileName);
-    Shape craeteShapeObject(string svgObject);
+    vector<Shape*> openAndReadSvgFile(string fileName);
+    Shape* craeteShapeObject(string svgObject);
     void printShapes();
 
 };

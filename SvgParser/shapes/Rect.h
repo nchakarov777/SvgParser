@@ -11,6 +11,8 @@ public:
     Rect(string svgRect);
     ~Rect();
 
+    bool checkValid(string svgObject);
+
     int getX();
     int getY();
     int getHeight();
@@ -22,7 +24,7 @@ public:
     void setX(int x);
     void setY(int y);
 
-    //virtual void print(ostream& os);
+    virtual void print(ostream& os);
 };
 
 #endif // __Rect__

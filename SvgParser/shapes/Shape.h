@@ -14,22 +14,25 @@ protected:
     char* name;
     string stroke;
     string fillColor;
+    bool valid;
 public :
     Shape(string name);
     ~Shape();
     char* getName();
     string getStroke();
     string getFillColor();
+    bool getValid();
 
+    void setValid(bool valid);
     void setName(string name);
     void setStroke(string stroke);
     void setFillColor(string fillColor);
 
-   /* virtual void print(ostream &os) = 0;
+    virtual void print(ostream &os) = 0;
 
-    friend ostream& operator << (ostream& os, Shape &shape); */
 };
 
+ostream& operator << (ostream& os, Shape* shape);
 
 
 #endif // __Shape__

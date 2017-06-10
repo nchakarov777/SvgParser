@@ -44,12 +44,20 @@ void Shape::setName(string name){
     }
 }
 
-/*void Shape::print(ostream &os){
-    os<<getName()<<" ";
-    cout<<"tuk"<<endl;
+void Shape::setValid(bool valid){
+    this->valid = valid;
 }
-ostream& operator << (ostream& os,  Shape &shape) {
-    shape.print(os);
+
+bool Shape::getValid(){
+    return valid;
+}
+
+void Shape::print(ostream &os){
+    os<<getName()<<" ";
+}
+
+ostream& operator << (ostream& os,  Shape* shape) {
+    shape->print(os);
     return os;
-}*/
+}
 

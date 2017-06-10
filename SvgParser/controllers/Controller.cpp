@@ -13,7 +13,7 @@ Controller::Controller()
 
 }
 
-vector<Shape> Controller::openAndReadSvgFile(string fileName)
+vector<Shape*> Controller::openAndReadSvgFile(string fileName)
 {
     ifstream svg;
     //As mentioned here https://stackoverflow.com/questions/10966446/passing-a-string-to-file-open
@@ -22,8 +22,8 @@ vector<Shape> Controller::openAndReadSvgFile(string fileName)
     {
         cout<<"inside"<<endl;
         for(string line; getline(svg, line);){
-            Shape shape = craeteShapeObject(line);
-            if(strlen(shape.getName())>=1){
+            Shape* shape = craeteShapeObject(line);
+            if(shape->getValid()){
                 shapes.push_back(shape);
             }
         }
@@ -33,15 +33,17 @@ vector<Shape> Controller::openAndReadSvgFile(string fileName)
     return shapes;
 }
 
-Shape Controller::craeteShapeObject(string svgObject){
+Shape* Controller::craeteShapeObject(string svgObject){
     if(svgObject.find(values[0])!= string::npos){
-        return Rect(svgObject);
+        Rect* rect = new Rect(svgObject);
+        return rect;
     }
-    return Shape("");
+    return new Rect("");
 }
 
 void Controller::printShapes(){
     for(int i = 0; i<shapes.size(); i++){
-        cout<<shapes[i].getName()<<" "<<shapes[i].getFillColor()<<endl;
+        //cout<<shapes[i]->getName()<<" "<<shapes[i]->getFillColor()<<endl;
+        cout<<shapes[i];
     }
 }

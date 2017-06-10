@@ -11,20 +11,36 @@ using namespace std;
 
 Rect::Rect(string svgObject):Shape("rect")
 {
-    istringstream objectStream(svgObject);
-    string property;
-    objectStream>>property;
-
-    do
+    if(checkValid(svgObject))
     {
+        istringstream objectStream(svgObject);
+        string property;
         objectStream>>property;
-        if(property.find("/>") != string::npos)
+
+        do
         {
-            break;
+            objectStream>>property;
+            if(property.find("/>") != string::npos)
+            {
+                break;
+            }
+            setProperty(property);
         }
-        setProperty(property);
+        while(objectStream);
     }
-    while(objectStream);
+}
+
+bool Rect::checkValid(string svgObject)
+{
+    if(svgObject.empty())
+    {
+        setValid(false);
+    }
+    else
+    {
+        setValid(true);
+    }
+    return getValid();
 }
 
 void Rect::setProperty(string property) throw(string)
@@ -124,10 +140,10 @@ Rect::~Rect()
 {
 
 }
-/*
+
 void Rect::print(ostream& os)
 {
-    cout<<"TUKAAA"<<endl;
+    Shape::print(os);
     os<<getX()<<" "<<getY()<<" "<<getHeight()<<" "<<getWidth()<<" "<<getFillColor()<<endl;
 }
-*/
+
