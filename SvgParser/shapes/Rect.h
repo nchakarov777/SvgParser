@@ -8,6 +8,7 @@ class Rect: public Shape {
 private:
     int x, y, height, width;
 public:
+    Rect();
     Rect(string svgRect);
     ~Rect();
 
@@ -24,6 +25,7 @@ public:
     void setX(int x);
     void setY(int y);
 
+    static Shape* create();
     virtual void print(ostream& os);
 };
 

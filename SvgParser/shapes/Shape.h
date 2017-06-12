@@ -11,13 +11,19 @@ using namespace std;
 class Shape
 {
 protected:
+
     char* name;
     string stroke;
     string fillColor;
     bool valid;
 public :
+    static const string RECT;
+    static const string CIRCLE;
+    static const string LINE;
+
     Shape(string name);
     ~Shape();
+
     char* getName();
     string getStroke();
     string getFillColor();

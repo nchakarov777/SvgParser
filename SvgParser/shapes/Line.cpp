@@ -30,6 +30,11 @@ Line::Line(string svgObject):Shape("line")
     }
 }
 
+Line::Line():Shape(Shape::LINE)
+{
+    setValid(true);
+}
+
 bool Line::checkValid(string svgObject)
 {
     if(svgObject.empty())
@@ -131,4 +136,19 @@ void Line::print(ostream& os)
 {
     Shape::print(os);
     os<<getFirstX()<<" "<<getFirstY()<<" "<<getSecondX()<<" "<<getSecondY()<<endl;
+}
+
+Shape* Line::create(){
+    Line* line = new Line();
+
+    int x1, x2, y1, y2;
+
+    cin>>x1>>y1>>x2>>y2;
+
+    line->setFirstX(x1);
+    line->setFirstY(y1);
+    line->setSecondX(x2);
+    line->setSecondY(y2);
+
+    return line;
 }

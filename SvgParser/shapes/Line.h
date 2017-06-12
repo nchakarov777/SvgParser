@@ -10,6 +10,7 @@ private:
 
 public:
     Line(string svgLine);
+    Line();
     ~Line();
 
     bool checkValid(string svgLine);
@@ -26,6 +27,7 @@ public:
     void setFirstX(int x1);
     void setFirstY(int y1);
 
+    static Shape* create();
     virtual void print(ostream& os);
 };
 

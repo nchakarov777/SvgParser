@@ -19,8 +19,13 @@ private:
     vector<Shape*> shapes;
 public:
     Controller();
+
     vector<Shape*> openAndReadSvgFile(string fileName);
-    Shape* craeteShapeObject(string svgObject);
+    Shape* generateShapeFromString(string svgObject);
+    Shape* generateShapeFromConsole();
+
+    void createShape();
+    void eraseShape(int shapeIndex);
     void printShapes();
 
 };

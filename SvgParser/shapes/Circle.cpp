@@ -9,7 +9,7 @@
 
 using namespace std;
 
-Circle::Circle(string svgObject):Shape("circle")
+Circle::Circle(string svgObject):Shape(Shape::CIRCLE)
 {
     if(checkValid(svgObject))
     {
@@ -115,6 +115,11 @@ int Circle::getRadius()
     return radius;
 }
 
+Circle::Circle():Shape(Shape::CIRCLE)
+{
+    setValid(true);
+}
+
 Circle::~Circle()
 {
 
@@ -124,4 +129,20 @@ void Circle::print(ostream& os)
 {
     Shape::print(os);
     os<<getCX()<<" "<<getCY()<<" "<<getRadius()<<" "<<getFillColor()<<endl;
+}
+
+Shape* Circle::create(){
+    int cx, cy, r;
+    string fillColor;
+
+    Circle* circle = new Circle();
+
+    cin>>cx>>cy>>r>>fillColor;
+
+    circle->setCX(cx);
+    circle->setCX(cy);
+    circle->setRadius(r);
+    circle->getFillColor();
+
+    return circle;
 }

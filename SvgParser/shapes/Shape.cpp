@@ -1,8 +1,13 @@
-#include "Shape.h"
-#include<iostream>
 #include<cstring>
+#include<iostream>
+
+#include "Shape.h"
+
 using namespace std;
 
+const string Shape::RECT = "rect";
+const string Shape::CIRCLE = "circle";
+const string Shape::LINE = "line";
 
 Shape::Shape(string name)
 {
@@ -14,28 +19,34 @@ Shape::Shape(string name)
     }
 }
 
-char* Shape::getName(){
+char* Shape::getName()
+{
     return name;
 }
 
-Shape::~Shape(){
+Shape::~Shape()
+{
     delete[] name;
 }
 
-void Shape::setFillColor(string color){
+void Shape::setFillColor(string color)
+{
     this->fillColor=color;
 }
 
-void Shape::setStroke(string stroke){
+void Shape::setStroke(string stroke)
+{
     this->stroke = stroke;
 }
 
-string Shape::getFillColor(){
+string Shape::getFillColor()
+{
     return fillColor;
 }
 
 /**Used dynamic char array only to prove my teacher, that I can properly use them.*/
-void Shape::setName(string name){
+void Shape::setName(string name)
+{
     int nameL = name.length()+1;
     this->name = new char[nameL];
     for(int i = 0; i < nameL; i++)
@@ -44,19 +55,23 @@ void Shape::setName(string name){
     }
 }
 
-void Shape::setValid(bool valid){
+void Shape::setValid(bool valid)
+{
     this->valid = valid;
 }
 
-bool Shape::getValid(){
+bool Shape::getValid()
+{
     return valid;
 }
 
-void Shape::print(ostream &os){
+void Shape::print(ostream &os)
+{
     os<<getName()<<" ";
 }
 
-ostream& operator << (ostream& os,  Shape* shape) {
+ostream& operator << (ostream& os,  Shape* shape)
+{
     shape->print(os);
     return os;
 }

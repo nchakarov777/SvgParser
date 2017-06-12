@@ -9,6 +9,7 @@ private:
     int cx, cy, radius;
 public:
     Circle(string svgCircle);
+    Circle();
     ~Circle();
 
     bool checkValid(string svgCircle);
@@ -22,6 +23,7 @@ public:
     void setCX(int cx);
     void setCY(int cy);
 
+    static Shape* create();
     virtual void print(ostream& os);
 };
 

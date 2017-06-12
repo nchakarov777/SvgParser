@@ -9,7 +9,7 @@
 
 using namespace std;
 
-Rect::Rect(string svgObject):Shape("rect")
+Rect::Rect(string svgObject):Shape(Shape::RECT)
 {
     if(checkValid(svgObject))
     {
@@ -29,6 +29,12 @@ Rect::Rect(string svgObject):Shape("rect")
         while(objectStream);
     }
 }
+
+Rect::Rect():Shape(Shape::RECT)
+{
+    setValid(true);
+}
+
 
 bool Rect::checkValid(string svgObject)
 {
@@ -90,25 +96,21 @@ void Rect::setProperty(string property)
 
 void Rect::setHeight(int height)
 {
-    cout<<height<<" ";
     this->height = height;
 }
 
 void Rect::setWidth(int width)
 {
-    cout<<width<<" ";
     this->width = width;
 }
 
 void Rect::setX(int x)
 {
-    cout<<x<<" ";
     this->x = x;
 }
 
 void Rect::setY(int y)
 {
-    cout<<y<<" ";
     this->y = y;
 }
 
@@ -143,3 +145,20 @@ void Rect::print(ostream& os)
     os<<getX()<<" "<<getY()<<" "<<getHeight()<<" "<<getWidth()<<" "<<getFillColor()<<endl;
 }
 
+Shape* Rect::create()
+{
+
+    Rect* rect = new Rect();
+    int x, y, height, width;
+    string fillColor;
+
+    cin>>x>>y>>height>>width>>fillColor;
+
+    rect->setX(x);
+    rect->setY(y);
+    rect->setHeight(height);
+    rect->setWidth(width);
+    rect->setFillColor(fillColor);
+
+    return rect;
+}
