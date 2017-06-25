@@ -8,18 +8,29 @@ string StringUtils::getPropertyValue(string property)
     int position = property.find("=");
     for(int i = position+2; i<property.length(); i++ )
     {
-        if(property[i]!='"'){
+        if(property[i]!='"')
+        {
             result+=property[i];
-        }else{
+        }
+        else
+        {
             break;
         }
     }
     return result;
 }
 
-int StringUtils::convertStringToInt(string integer){
+int StringUtils::convertStringToInt(string integer)
+{
     int result;
     istringstream ss(integer);
     ss >> result;
     return result;
+}
+
+string StringUtils::convertIntToString(int number)
+{
+    ostringstream ss;
+    ss << number;
+    return ss.str();
 }

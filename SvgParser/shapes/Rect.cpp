@@ -145,6 +145,19 @@ void Rect::print(ostream& os)
     os<<getX()<<" "<<getY()<<" "<<getHeight()<<" "<<getWidth()<<" "<<getFillColor()<<endl;
 }
 
+string Rect::getShapeAsSvg()
+{
+    string svgShape = "<";
+    svgShape.append(getName());
+    svgShape += " "+ShapeProperties::X+"=\""+StringUtils::convertIntToString(getX())+
+                "\" "+ShapeProperties::Y+"=\""+StringUtils::convertIntToString(getY())+
+                "\" "+ShapeProperties::HEIGHT+"=\""+StringUtils::convertIntToString(getHeight())+
+                "\" "+ShapeProperties::WIDTH+"=\""+StringUtils::convertIntToString(getWidth())+
+                "\" "+ShapeProperties::FILL+"=\""+getFillColor()+
+                "\" />";
+    return svgShape;
+}
+
 Shape* Rect::create()
 {
 

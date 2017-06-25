@@ -29,6 +29,7 @@ public:
 
     static Shape* create();
     virtual void print(ostream& os);
+    virtual string getShapeAsSvg();
 };
 
 #endif // __Line__

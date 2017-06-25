@@ -35,7 +35,7 @@ public :
     void setFillColor(string fillColor);
 
     virtual void print(ostream &os) = 0;
-
+    virtual string getShapeAsSvg() = 0;
 };
 
 ostream& operator << (ostream& os, Shape* shape);

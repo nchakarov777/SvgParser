@@ -84,19 +84,16 @@ void Circle::setProperty(string property)
 
 void Circle::setRadius(int radius)
 {
-    cout<<radius<<" ";
     this->radius = radius;
 }
 
 void Circle::setCX(int cx)
 {
-    cout<<cx<<" ";
     this->cx = cx;
 }
 
 void Circle::setCY(int cy)
 {
-    cout<<cy<<" ";
     this->cy = cy;
 }
 
@@ -120,18 +117,26 @@ Circle::Circle():Shape(Shape::CIRCLE)
     setValid(true);
 }
 
-Circle::~Circle()
-{
-
-}
-
 void Circle::print(ostream& os)
 {
     Shape::print(os);
     os<<getCX()<<" "<<getCY()<<" "<<getRadius()<<" "<<getFillColor()<<endl;
 }
 
-Shape* Circle::create(){
+string Circle::getShapeAsSvg()
+{
+    string svgShape = "<";
+    svgShape.append(getName());
+    svgShape += " "+ShapeProperties::CENTER_X+"=\""+StringUtils::convertIntToString(getCX())+
+                "\" "+ShapeProperties::CENTER_Y+"=\""+StringUtils::convertIntToString(getCY())+
+                "\" "+ShapeProperties::RADIUS+"=\""+StringUtils::convertIntToString(getRadius())+
+                "\" "+ShapeProperties::FILL+"=\""+getFillColor()+
+                "\" />";
+    return svgShape;
+}
+
+Shape* Circle::create()
+{
     int cx, cy, r;
     string fillColor;
 

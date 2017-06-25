@@ -12,13 +12,13 @@ private:
 
 public:
     Console();
-    ~Console();
 
     static const std::string OPEN;
     static const std::string PRINT;
     static const std::string ERASE;
     static const std::string CREATE;
     static const std::string EXIT;
+    static const std::string SAVE;
 
     void createShape();
     void printMenu();

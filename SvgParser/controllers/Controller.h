@@ -18,7 +18,6 @@ class Controller
 private:
     vector<Shape*> shapes;
 public:
-    Controller();
 
     vector<Shape*> openAndReadSvgFile(string fileName);
     Shape* generateShapeFromString(string svgObject);
@@ -27,6 +26,7 @@ public:
     void createShape();
     void eraseShape(int shapeIndex);
     void printShapes();
+    void saveShapes();
 
 };
 

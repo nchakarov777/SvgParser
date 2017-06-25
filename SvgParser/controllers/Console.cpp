@@ -8,6 +8,7 @@ const string Console::OPEN = "open";
 const string Console::PRINT = "print";
 const string Console::ERASE = "erase";
 const string Console::CREATE = "create";
+const string Console::SAVE = "save";
 const string Console::EXIT = "exit";
 
 Console::Console()
@@ -15,11 +16,14 @@ Console::Console()
     controller = Controller();
 }
 
-
 void Console::printMenu()
 {
     cout<<"For reading some svg file please type -->$ open filename.svg"<<endl;
     cout<<"For printing the loaded files -->$ print"<<endl;
+    cout<<"For erasing loaded shape -->$ erase shapeIndex"<<endl;
+    cout<<"For creating new shape -->$ create shapeData"<<endl;
+    cout<<"For saving the shapes in a svg file -->$ save"<<endl;
+    cout<<"For exiting the application -->$ exit"<<endl;
 }
 
 void Console::processMenuSelection(string opr)
@@ -45,6 +49,11 @@ void Console::processMenuSelection(string opr)
     {
         controller.createShape();
     }
+
+    if(opr.find(Console::SAVE) != string::npos)
+    {
+        controller.saveShapes();
+    }
 }
 
 void Console::startApplication()
@@ -55,10 +64,4 @@ void Console::startApplication()
         cin>>operation;
         processMenuSelection(operation);
     }
-}
-
-
-Console::~Console()
-{
-
 }

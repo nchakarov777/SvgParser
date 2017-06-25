@@ -138,6 +138,18 @@ void Line::print(ostream& os)
     os<<getFirstX()<<" "<<getFirstY()<<" "<<getSecondX()<<" "<<getSecondY()<<endl;
 }
 
+string Line::getShapeAsSvg()
+{
+    string svgShape = "<";
+    svgShape.append(getName());
+    svgShape += " "+ShapeProperties::FIRST_X+"=\""+StringUtils::convertIntToString(getFirstX())+
+                "\" "+ShapeProperties::FIRST_Y+"=\""+StringUtils::convertIntToString(getFirstY())+
+                "\" "+ShapeProperties::SECOND_X+"=\""+StringUtils::convertIntToString(getSecondX())+
+                "\" "+ShapeProperties::SECOND_Y+"=\""+StringUtils::convertIntToString(getSecondY())+
+                "\" />";
+    return svgShape;
+}
+
 Shape* Line::create(){
     Line* line = new Line();
 

@@ -1,6 +1,6 @@
-#include "Shape.h"
-
 #include<iostream>
+
+#include "Shape.h"
 
 #ifndef __Circle__
 #define __Circle__
@@ -10,7 +10,6 @@ private:
 public:
     Circle(string svgCircle);
     Circle();
-    ~Circle();
 
     bool checkValid(string svgCircle);
 
@@ -25,6 +24,7 @@ public:
 
     static Shape* create();
     virtual void print(ostream& os);
+    virtual string getShapeAsSvg();
 };
 
 #endif // __Circle__
