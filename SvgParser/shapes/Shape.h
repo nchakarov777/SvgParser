@@ -22,7 +22,7 @@ public :
     static const string LINE;
 
     Shape(string name);
-    ~Shape();
+    virtual ~Shape();
 
     char* getName();
     string getStroke();
