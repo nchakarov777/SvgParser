@@ -24,7 +24,7 @@ public :
     Shape(string name);
     virtual ~Shape();
 
-    char* getName();
+    const char* getName();
     string getStroke();
     string getFillColor();
     bool getValid();

@@ -19,7 +19,7 @@ Shape::Shape(string name)
     }
 }
 
-char* Shape::getName()
+const char* Shape::getName()
 {
     return name;
 }

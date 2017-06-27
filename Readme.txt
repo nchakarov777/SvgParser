@@ -11,10 +11,19 @@ Supported shapes and properties:
 	line x1, x2, y1, y2, stroke
 
 How to use it: 
-	compile it with 
+
+	compile it with make or mingw32-make,
+	
+	windows:
 	$mingw32-make -f Makefile.windows
-	$make -f Makefile.widnows(if you are on windows)
-	$make -f Makefile.mac ot Makefile.unix (for mac and linux)
+	$make -f Makefile.windows
+	
+	linux:
+	$make -f Makefile.unix 
+	
+	mac: 
+	$make -f Makefile.mac
+	
 	then an executable should be created in the /bin/Debug/ directory.
  	
 	After that you can open an svg file and the application 	will 	read the shapes for you, or can start crating new 	one with the create operation. 
