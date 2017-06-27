@@ -147,7 +147,7 @@ Shape* Circle::create()
     circle->setCX(cx);
     circle->setCX(cy);
     circle->setRadius(r);
-    circle->getFillColor();
+    circle->setFillColor(fillColor);
 
     return circle;
 }
