@@ -11,11 +11,16 @@ Supported shapes and properties:
 	line x1, x2, y1, y2, stroke
 
 How to use it: 
-	compile it with g++ 
-	then you can open an svg file and the application will 	read the shapes for you, or can start crating new one 	with the create operation. 
+	compile it with 
+	$mingw32-make -f Makefile.windows
+	$make -f Makefile.widnows(if you are on windows)
+	$make -f Makefile.mac ot Makefile.unix (for mac and linux)
+	then an executable should be created in the /bin/Debug/ directory.
+ 	
+	After that you can open an svg file and the application 	will 	read the shapes for you, or can start crating new 	one with the create operation. 
 
 Operations:
-	open - expects valid svg file, opens the file reads the shapes 
+	open - expects valid svg file path, opens the file reads the shapes 
 	create - creates new shape, expect the name of the shape and then all of it supported properties in the indicated above way
 	save - saves the current shapes in a corect svg format.
 	print - prints to the console the currect shapes
